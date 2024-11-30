@@ -51,40 +51,36 @@ int main(){
     long long N;
     cin >> N;
 
+    long long num = N;
+    int divisorCount = 1;
+
     auto start = chrono::high_resolution_clock::now(); // Start the timer
-    int divisorCount = 0;
-    for (long long i = 1; i <= N; i++){
-        if (N % i ==  0){
-            divisorCount++;
+    
+    for (long long i = 2; i * i <= num; i++){
+        int factorCount = 0;
+        while (num % i == 0){
+            factorCount++;
+            num /= i;
         }
+
+        divisorCount *= (1 + factorCount);        
+    }
+
+    /*
+        remaining factor, only possible for one prime number that greater that sqrt(dynamic remaining num),
+        each factor is equi to multiplication of 2 (for 1 and the number itself)
+    */
+    if(num > 1){
+        divisorCount *= 2;
     }
     auto end = chrono::high_resolution_clock::now(); // End the timer
-    
-    if (divisorCount % 2 == 0){
+
+    if(divisorCount % 2 == 0){
         cout << "lampu mati" << endl;
     } else {
         cout << "lampu menyala" << endl;
     }
-
+    
     chrono::duration<double> elapsed = end - start;
     cout << "Execution Time: " << elapsed.count() << " seconds" << endl; 
 }
-
-/*
-Penjelasan dari solusi sederhana di atas logika dan juga disebutkan dalam buku
-
-Pemrograman Kompetitif Dasar
-Panduan Memulai OSN Informatika,
-ACM-ICPC, dan Sederajat
-
-Untuk masukan N, program sederhana ini melakukan N buah pengecekan. 
-Artinya pada kasus terburuk, program tersebut akan melakukan N = 10^18 buah pengecekan! 
-
-Jika kita asumsikan komputer sekarang dapat melakukan 108 operasi per detik, 
-program ini memerlukan waktu 10 tahun untuk menyelesaikan hitungan!
-
-Program ini hanya akan bekerja untuk nilai N yang kecil. Untuk N yang lebih besar, 
-misalnya N = 109, kemungkinan besar diperlukan waktu lebih dari 1 detik.
-
-Solusi ini tidak akan mendapatkan nilai penuh, atau bahkan 0, tergantung skema penilaian yang digunakan.
-*/
