@@ -70,3 +70,21 @@ int main(){
     cout << "Execution Time: " << elapsed.count() << " seconds" << endl; // Output execution time to stderr
 }
 
+/*
+Penjelasan dari solusi sederhana di atas logika dan juga disebutkan dalam buku
+
+Pemrograman Kompetitif Dasar
+Panduan Memulai OSN Informatika,
+ACM-ICPC, dan Sederajat
+
+Untuk masukan N, program sederhana ini melakukan N buah pengecekan. 
+Artinya pada kasus terburuk, program tersebut akan melakukan N = 10^18 buah pengecekan! 
+
+Jika kita asumsikan komputer sekarang dapat melakukan 108 operasi per detik, 
+program ini memerlukan waktu 10 tahun untuk menyelesaikan hitungan!
+
+Program ini hanya akan bekerja untuk nilai N yang kecil. Untuk N yang lebih besar, 
+misalnya N = 109, kemungkinan besar diperlukan waktu lebih dari 1 detik.
+
+Solusi ini tidak akan mendapatkan nilai penuh, atau bahkan 0, tergantung skema penilaian yang digunakan.
+*/
