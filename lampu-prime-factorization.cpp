@@ -53,6 +53,7 @@ int main(){
 
     long long num = N;
     int divisorCount = 1;
+    vector<long long> primeFactors;
 
     auto start = chrono::high_resolution_clock::now(); // Start the timer
     
@@ -61,6 +62,7 @@ int main(){
         while (num % i == 0){
             factorCount++;
             num /= i;
+            primeFactors.push_back(i);
         }
 
         divisorCount *= (1 + factorCount);        
@@ -72,8 +74,16 @@ int main(){
     */
     if(num > 1){
         divisorCount *= 2;
+        primeFactors.push_back(num);
     }
     auto end = chrono::high_resolution_clock::now(); // End the timer
+
+    // Print the prime factors
+    cout << "Prime factors: ";
+    for (long long factor : primeFactors) {
+        cout << factor << " ";
+    }
+    cout << endl;
 
     if(divisorCount % 2 == 0){
         cout << "lampu mati" << endl;
