@@ -64,6 +64,10 @@ int main() {
 
 
 /*
+    Buku Pemrograman Kompetitif Dasar 
+    Panduan Memulai OSN Informatika, ACM-ICPC, dan Sederajat
+    Ikatan Alumni TOKI
+    
     Algoritma 6 Sieve of Eratosthenes
     1: function SIEVEOFERATOSTHENES(N)
     2:    eleminated ← new boolean[N +1] . Siapkan array boolean eleminated

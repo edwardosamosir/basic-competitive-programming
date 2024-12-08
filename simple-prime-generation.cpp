@@ -55,6 +55,10 @@ int main() {
 }
 
 /*
+    Buku Pemrograman Kompetitif Dasar 
+    Panduan Memulai OSN Informatika, ACM-ICPC, dan Sederajat
+    Ikatan Alumni TOKI
+    
     Algoritma 5 Pembangkitan Bilangan Prima dengan iterasi dan uji keprimaan.
     1: function SIMPLEPRIMEGENERATION(N)
     2:      primeList ← {}
