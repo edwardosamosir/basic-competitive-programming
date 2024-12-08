@@ -120,7 +120,7 @@ int main(){
 
 
     cout << "FPB atau GCD dengan metode sederhana dari " << a << " dan " << b << " adalah " << fpb_gcd_naive_of_two_numbers(a, b) << endl;
-    cout << "FPB atau GCD dengan metode sederhana dari " << a << " dan " << b << " adalah " << fpb_gcd_prime_factored_of_two_numbers(a, b) << endl;
-    cout << "FPB atau GCD dengan metode sederhana dari " << a << " dan " << b << " adalah " << fpb_gcd_euclid_iteration(a, b) << endl;
-    cout << "FPB atau GCD dengan metode sederhana dari " << a << " dan " << b << " adalah " << fpb_gcd_euclid_recursive(a, b) << endl;
+    cout << "FPB atau GCD dengan metode faktorisasi prima dari " << a << " dan " << b << " adalah " << fpb_gcd_prime_factored_of_two_numbers(a, b) << endl;
+    cout << "FPB atau GCD dengan metode iterasi euclid dari " << a << " dan " << b << " adalah " << fpb_gcd_euclid_iteration(a, b) << endl;
+    cout << "FPB atau GCD dengan metode rekursif euclid dari " << a << " dan " << b << " adalah " << fpb_gcd_euclid_recursive(a, b) << endl;
 }
