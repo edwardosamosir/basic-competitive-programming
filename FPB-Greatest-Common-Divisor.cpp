@@ -93,6 +93,22 @@ long long fpb_gcd_prime_factored_of_two_numbers(long long a, long long b){
     return fpb;
 }
 
+long long fpb_gcd_euclid_iteration(long long a, long long b){
+    while (b != 0){
+        long long temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
+
+long long fpb_gcd_euclid_recursive(long long a, long long b){
+    if (b == 0){
+        return a;
+    }
+    return fpb_gcd_euclid_recursive(b, a % b);
+}
+
 int main(){
     long long a, b;
 
@@ -104,7 +120,7 @@ int main(){
 
 
     cout << "FPB atau GCD dengan metode sederhana dari " << a << " dan " << b << " adalah " << fpb_gcd_naive_of_two_numbers(a, b) << endl;
-
     cout << "FPB atau GCD dengan metode sederhana dari " << a << " dan " << b << " adalah " << fpb_gcd_prime_factored_of_two_numbers(a, b) << endl;
-
+    cout << "FPB atau GCD dengan metode sederhana dari " << a << " dan " << b << " adalah " << fpb_gcd_euclid_iteration(a, b) << endl;
+    cout << "FPB atau GCD dengan metode sederhana dari " << a << " dan " << b << " adalah " << fpb_gcd_euclid_recursive(a, b) << endl;
 }
