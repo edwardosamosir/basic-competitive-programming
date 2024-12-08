@@ -124,3 +124,27 @@ int main(){
     cout << "FPB atau GCD dengan metode iterasi euclid dari " << a << " dan " << b << " adalah " << fpb_gcd_euclid_iteration(a, b) << endl;
     cout << "FPB atau GCD dengan metode rekursif euclid dari " << a << " dan " << b << " adalah " << fpb_gcd_euclid_recursive(a, b) << endl;
 }
+
+/*
+    Buku Pemrograman Kompetitif Dasar 
+    Panduan Memulai OSN Informatika, ACM-ICPC, dan Sederajat
+    Ikatan Alumni TOKI
+    
+    Algoritma 7 Algoritma Euclid untuk mencari FPB secara rekursif.
+    1: function EUCLID(a,b)
+    2:      if b = 0 then
+    3:          return a
+    4:      else
+    5:          return EUCLID(b,a mod b)
+    6:      end if
+    7: end function
+
+    contoh input dan output :
+
+    Masukkan angka pertama: 4725
+    Masukkan angka kedua: 7875
+    FPB atau GCD dengan metode sederhana dari 4725 dan 7875 adalah 1575
+    FPB atau GCD dengan metode faktorisasi prima dari 4725 dan 7875 adalah 1575
+    FPB atau GCD dengan metode iterasi euclid dari 4725 dan 7875 adalah 1575
+    FPB atau GCD dengan metode rekursif euclid dari 4725 dan 7875 adalah 1575
+*/
