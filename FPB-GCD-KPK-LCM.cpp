@@ -109,6 +109,27 @@ long long fpb_gcd_euclid_recursive(long long a, long long b){
     return fpb_gcd_euclid_recursive(b, a % b);
 }
 
+long long kpk_lcm_naive(long long a, long long b){
+    long long max_val = max(a,b);
+    while (true){
+        if (max_val % a == 0 && max_val % b == 0){
+            return max_val;
+        }
+        max_val++;
+    }
+}
+
+long long kpk_lcm_iteration(long long a, long long b){
+    return(a * b) / fpb_gcd_euclid_iteration(a, b);
+}
+
+long long kpk_lcm_recursive(long long a, long long b){
+     return(a * b)/ fpb_gcd_euclid_recursive(a, b);
+}
+
+   
+
+
 int main(){
     long long a, b;
 
@@ -123,6 +144,10 @@ int main(){
     cout << "FPB atau GCD dengan metode faktorisasi prima dari " << a << " dan " << b << " adalah " << fpb_gcd_prime_factored_of_two_numbers(a, b) << endl;
     cout << "FPB atau GCD dengan metode iterasi euclid dari " << a << " dan " << b << " adalah " << fpb_gcd_euclid_iteration(a, b) << endl;
     cout << "FPB atau GCD dengan metode rekursif euclid dari " << a << " dan " << b << " adalah " << fpb_gcd_euclid_recursive(a, b) << endl;
+
+    cout << "KPK atau LCM dengan metode sederhana dari " << a << " dan " << b << " adalah " << kpk_lcm_naive(a, b) << endl;
+    cout << "KPK atau LCM dengan metode iterasi euclid dari " << a << " dan " << b << " adalah " << kpk_lcm_iteration(a, b) << endl;
+    cout << "KPK atau LCM dengan metode rekursif euclid dari " << a << " dan " << b << " adalah " << kpk_lcm_recursive(a, b) << endl;
 }
 
 /*
